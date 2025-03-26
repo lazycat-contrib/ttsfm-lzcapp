@@ -1,0 +1,14 @@
+services:
+    ttsfm:
+        ports:
+            - 7000:7000
+        environment:
+            - HOST=0.0.0.0
+            - PORT=7000
+            - VERIFY_SSL=true
+            - USE_PROXY=false
+            - PROXY_API_URL=https://proxy.scdn.io/api/get_proxy.php
+            - PROXY_PROTOCOL=http
+            - PROXY_BATCH_SIZE=5
+            - MAX_QUEUE_SIZE=100
+        image: dbcccc/ttsfm:latest

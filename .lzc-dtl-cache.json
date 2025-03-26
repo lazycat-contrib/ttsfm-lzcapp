@@ -1,0 +1,32 @@
+{
+  "name": "TTSFM",
+  "package": "cloud.lazycat.community.app.ttsfm",
+  "description": "TTSFM 是一个逆向工程实现的 API 服务器，完全兼容 OpenAI 的文本转语音(TTS)接口",
+  "homepage": "https://github.com/dbccccccc/ttsfm",
+  "author": "dbccccccc",
+  "app_features": [
+    "background_task",
+    "public_path"
+  ],
+  "subdomain": "ttsfm",
+  "version": "1.1.1",
+  "public_paths": [
+    "/"
+  ],
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yaml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "ttsfm_7000_7000": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_dbcccc_ttsfm_latest": {
+    "originalImage": "dbcccc/ttsfm:latest",
+    "pushTarget": "none"
+  }
+}
