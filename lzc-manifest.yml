@@ -7,11 +7,10 @@ application:
   upstreams:
     - location: /
       backend: http://ttsfm:7000/
-
 services:
   ttsfm:
-    # upstream: dbcccc/ttsfm:v1.1.1
-    image: docker.1ms.run/dbcccc/ttsfm:v1.1.1
+    # upstream: dbcccc/ttsfm:v3.5.0
+    image: docker.1ms.run/dbcccc/ttsfm:v3.5.0
     environment:
       - HOST=0.0.0.0
       - PORT=7000
