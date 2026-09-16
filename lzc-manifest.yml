@@ -1,0 +1,23 @@
+application:
+  subdomain: ttsfm
+  background_task: true
+  multi_instance: false
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://ttsfm:7000/
+
+services:
+  ttsfm:
+    # upstream: dbcccc/ttsfm:v1.1.1
+    image: docker.1ms.run/dbcccc/ttsfm:v1.1.1
+    environment:
+      - HOST=0.0.0.0
+      - PORT=7000
+      - VERIFY_SSL=true
+      - USE_PROXY=true
+      - PROXY_API_URL=https://proxy.scdn.io/api/get_proxy.php
+      - PROXY_PROTOCOL=http
+      - PROXY_BATCH_SIZE=5
+      - MAX_QUEUE_SIZE=100

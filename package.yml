@@ -1,0 +1,14 @@
+package: cloud.lazycat.community.app.ttsfm
+version: 1.1.1
+name: TTSFM
+description: "TTSFM 是一个逆向工程实现的 API 服务器，完全兼容 OpenAI 的文本转语音(TTS)接口"
+homepage: https://github.com/dbccccccc/ttsfm
+author: dbccccccc
+min_os_version: "1.5.0"
+locales:
+  zh:
+    description: "TTSFM 是一个逆向工程实现的 API 服务器，完全兼容 OpenAI 的文本转语音(TTS)接口"
+    name: TTSFM
+  en:
+    description: "TTSFM is a reverse-engineered API server fully compatible with OpenAI's text-to-speech (TTS) interface"
+    name: TTSFM

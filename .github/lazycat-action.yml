@@ -1,0 +1,36 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/ttsfm.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: ttsfm
+build:
+  run_buildscript: false
+images:
+  - id: ttsfm
+    target: service
+    service: ttsfm
+    source: dbcccc/ttsfm
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+stores:
+  official:
+    enabled: false
+    skip_if_version_exists: true
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: TTSFM
+    summary: "完全兼容 OpenAI TTS 接口的文本转语音 API 服务器"
